@@ -1,0 +1,56 @@
+<ion-header >
+  <ion-toolbar color="background-color: #01162b;">
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg-image">
+  <img  src="assets/img/1.jpeg">
+  <br>
+  <br>
+  <ion-title  @enterState  class="ion-padding-top ion-text-center">
+    <ion-label>
+      <p >Sistema de asistencias duoc</p>
+    </ion-label>
+  </ion-title>
+
+  <div class="ion-padding-vertical">
+
+
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="login.Usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" >Password</ion-label>
+
+          <ion-input type="password" [(ngModel)]="login.Password"></ion-input>
+        </ion-item>
+        <div style="display: flex; justify-content: center;">
+        <ion-button color="#f9b901"  fill="outline" size="large" style=" justify-content: center;" (click)="ingresar()">Ingresar</ion-button>
+      </div>
+      <br>
+      <div style="display: flex; justify-content: center;">
+        <a routerLink="/recuperar">Recuperar contraseña</a>
+      </div>
+      <br>
+      <div style="display: flex; justify-content: center;">
+        <a routerLink="/registrarse">Registrarse</a>
+      </div>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="black">
+    <ion-label>
+      <div style="display: flex; justify-content: center;">
+      <br>
+      <br>
+      <a routerLink="">Términos y condiciones</a>
+      <br>
+      <br>
+      </div>
+    </ion-label>
+
+
+  </ion-toolbar>
+</ion-footer>

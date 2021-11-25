@@ -1,0 +1,27 @@
+ion-header {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    --padding-end: 20px;
+    --padding-start: 20px;
+    background-color: #01162b;
+      }
+ion-title {
+        text-align: center;
+    }
+ion-button {
+        color: white;
+       background-color:#f9b901 ;
+      }
+img {
+
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+.bg-image{
+        //--background: url(/src/assets/1.jpg) 0 0/100% 100% no-repeat;
+         //--background: #fff url('/src/assets/img/Palacio_Eguiguren,_Sede_padre_alonso.jpg') no-repeat center center / cover;;
+          background-image: url('/src/assets/img/1.jpeg') no-repeat center center fixed;
+          background-repeat: no-repeat;
+          background-size: cover;
+      
+      }

@@ -1,0 +1,97 @@
+<ion-toolbar>
+  <br>
+  <br>
+
+    <ion-title class="ion-text-center ion-text">
+      <p>Sugerencias y comentarios </p>
+     </ion-title>
+
+  </ion-toolbar>
+  <!-- Comienza el Header -->
+  <ion-header>
+    <ion-toolbar color="background-color: #01162b;">
+      <ion-tittle color="white" margin="left">
+
+      </ion-tittle>
+
+      <ion-buttons slot="primary">
+        <ion-button (click)="logout()" color="danger" fill="outline">
+          Salir
+          <ion-icon slot="end" name="log-out-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+    </ion-toolbar>
+
+  </ion-header>
+
+<ion-content>
+
+<a id="topOfPage" href="#topOfPage"></a>
+
+
+  <ion-card-header>
+
+    <ion-card-subtitle class="publicacionSeleccionada"></ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-item class="ion-padding-horizontal">
+    <ion-label position="floating" color="Secondary">Título</ion-label>
+    <ion-input [(ngModel)]="publicacion.title"></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-padding-horizontal">
+    <ion-label position="floating" color="Secondary">Cuerpo</ion-label>
+    <ion-textarea [(ngModel)]="publicacion.body"></ion-textarea>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-button shape="round" color=" #01162b" expand="full" (click)="limpiarPublicacion()">Limpiar</ion-button></ion-col>
+      <ion-col><ion-button shape="round"color=" #01162b" expand="full" (click)="guardarPublicacion()">Guardar</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+<ion-card class="sin-bordes">
+
+
+
+<ion-card *ngFor="let p of publicaciones; let i=index; trackBy: getIdentificadorItemPublicacion">
+
+  <ion-card-header>
+    <h6>(Publicación #{{p.id}}) {{p.name}}</h6>
+    <ion-title>{{p.title}}</ion-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{p.body}}
+  </ion-card-content>
+
+  <ion-button  color=" #01162b" expand="full" (click)="editarPublicacion(p)">
+    <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button  color=" #01162b" expand="full" (click)="eliminarPublicacion(p)">
+    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+  </ion-button>
+
+</ion-card>
+</ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="black">
+    <ion-label>
+      <div style="display: flex; justify-content: center;">
+      <br>
+      <br>
+      <a routerLink="">Términos y condiciones</a>
+      <br>
+      <br>
+      </div>
+    </ion-label>
+
+
+  </ion-toolbar>
+</ion-footer>

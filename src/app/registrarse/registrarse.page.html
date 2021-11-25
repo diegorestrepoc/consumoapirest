@@ -1,0 +1,35 @@
+<ion-header >
+  <ion-toolbar color="background-color: #01162b;">
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding-vertical">
+  <ion-item>
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="login.Usuario"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" >Password</ion-label>
+
+    <ion-input type="password" [(ngModel)]="login.Password"></ion-input>
+  </ion-item>
+
+<div style="display: flex; justify-content: center;">
+  <ion-button  color="#f9b901"  fill="outline" size="large" style=" justify-content: center;" (click)="registrar()">Registrarse</ion-button>
+</div>
+</div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="black">
+    <ion-label>
+      <div style="display: flex; justify-content: center;">
+      <br>
+      <br>
+      <a routerLink="">Términos y condiciones</a>
+      <br>
+      <br>
+      </div>
+    </ion-label>

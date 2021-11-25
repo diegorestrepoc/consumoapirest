@@ -1,0 +1,97 @@
+<ion-toolbar>
+<br>
+<br>
+
+  <ion-title class="ion-text-center ion-text">
+    <p>Sistema de asistencias duoc</p>
+   </ion-title>
+
+</ion-toolbar>
+<!-- Comienza el Header -->
+<ion-header>
+  <ion-toolbar color="background-color: #01162b;">
+    <ion-tittle color="white" margin="left">
+
+    </ion-tittle>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()" color="danger" fill="outline">
+        Salir
+        <ion-icon slot="end" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+<!-- Termina el Header -->
+
+<ion-content>
+
+  <br>
+
+
+
+  <!-- Fallback for iOS PWA -->
+  <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
+
+  <div style="display: flex; justify-content: center;">
+  <ion-button color=" #01162b"  (click)="startScan()">
+    <ion-icon slot="start" name="qr-scanner"></ion-icon>
+   tomar asistencia
+  </ion-button>
+</div>
+  <ion-button color=" #01162b" expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    Resetear
+  </ion-button>
+
+  <!-- Shows our camera stream -->
+  <video #video [hidden]="!scanActive" width="100%"></video>
+
+  <!-- Used to render the camera stream images -->
+  <canvas #canvas hidden></canvas>
+
+  <!-- Stop our scanner preview if active -->
+  <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+    <ion-icon slot="start" name="close"></ion-icon>
+    Detener escaneo
+  </ion-button>
+
+  <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title>Lector Qr</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ scanResult }}
+    </ion-card-content>
+  </ion-card>
+ <br>
+ <br>
+
+<div style="display: flex; justify-content: center;">
+  <ion-button color=" #01162b"  (click)="InfoNavigate()">
+   Sugerencias y comentarios
+  </ion-button>
+</div>
+
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="black">
+    <ion-label>
+      <div style="display: flex; justify-content: center;">
+      <br>
+      <br>
+      <a routerLink="">Términos y condiciones</a>
+      <br>
+      <br>
+      </div>
+    </ion-label>
+
+
+  </ion-toolbar>
+</ion-footer>
